@@ -8,6 +8,8 @@ cars_model <- readRDS("cars-model.rds")
 #* @apiTitle mtcars model API
 #* @apiDescription Endpoints for working with mtcars dataset model
 
+
+
 ## ---- filter-logger
 #* Log some information about the incoming request
 #* @filter logger
@@ -28,6 +30,6 @@ function(req, res) {
     res$status <- 400
     return(list(error = "No data submitted"))
   }
-
+  
   predict(cars_model, data)
 }
